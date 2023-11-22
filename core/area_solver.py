@@ -6,8 +6,9 @@ This function does the translation of area curve to reflection
 coefficient series and vice versa. 
 """
 
-#pylint: disable=bad-whitespace,invalid-name
-#pylint: disable=trailing-whitespace
+
+# pylint: disable=bad-whitespace,invalid-name
+# pylint: disable=trailing-whitespace
 
 
 def areaSolver(r_N, A_0):
@@ -16,7 +17,7 @@ def areaSolver(r_N, A_0):
     estimated cross sectional area for a given tube series based on a given 
     starting cross sectional area. 
     """
-    pos = len(r_N)-1
+    pos = len(r_N) - 1
     A_list = []
     for pos in range(0, len(r_N)):
         r_k = r_N[pos]
@@ -25,6 +26,7 @@ def areaSolver(r_N, A_0):
         A_0 = next_A
     return A_list
 
+
 def reflectionSolver(a_n):
     """
     This fucntion converts a series of cross sectional area into the corresponding
@@ -32,6 +34,6 @@ def reflectionSolver(a_n):
     """
     r_series = []
     for i in range(0, len(a_n) - 1):
-        r_series.append((a_n[i+1] - a_n[i]) / (a_n[i+1] + a_n[i]))
+        r_series.append((a_n[i + 1] - a_n[i]) / (a_n[i + 1] + a_n[i]))
 
     return r_series
