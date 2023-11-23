@@ -6,7 +6,7 @@ config = {
 	#useful directories
 	'rootdir': '/home/eric/PycharmProjects/GuessWho',
 	'datadir': '/home/eric/PycharmProjects/GuessWho/actual_data',
-	'celebrity_datadir': '/home/eric/PycharmProjects/GuessWho/celebrity_data'
+	'celebrity_datadir': '/home/eric/PycharmProjects/GuessWho/celebrity_data',
 
 	#Sentences in the correct order
 	'master_sentence_file': '/home/eric/PycharmProjects/GuessWho/adaptive_wavernn/gw_utils/master_sentences.txt',
