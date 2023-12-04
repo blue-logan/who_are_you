@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+set -e
+
+VERSION="v0.1"
+#readonly DOCKER_USER="${USER:-root}"
+readonly DOCKER_USER="eric"
+readonly PWD=`pwd`
+docker run -it -v ${PWD}:/home/${DOCKER_USER}/GuessWho --rm GuessWho:$VERSION
