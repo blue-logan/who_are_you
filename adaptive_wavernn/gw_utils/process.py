@@ -1,19 +1,34 @@
 from __future__ import print_function
-from config import config
-from collections import defaultdict
-import glob
-import sys,os
-import re
-import pandas as pd
-import json
 
+import glob
+import json
+import os
+import re
+from collections import defaultdict
+
+from config import config
 # modules made for preprocessing
 # This is where the raw files will be process to obtain the data we are looking for
 # which includes the praat table (formants), acoustic table (phonemes), bandwidth extractor
 # Import any new functionality here
-from utils.preprocess import phonemizer
-from utils.preprocess import praatformant
-from utils.preprocess.bandwith_extractor import *
+import importlib.util
+cache_path = '/home/eric/GuessWho/adaptive_wavernn/gw_utils/preprocess/'
+
+# phonemizer = imp.load_compiled("phomizer", cache_path+'phonemizer.pyc')
+spec = importlib.util.spec_from_file_location("phomizer", cache_path+'phonemizer.pyc')
+phonemizer = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(phonemizer)
+
+# praatformant = imp.load_compiled("praatformat", cache_path + 'praatformt.pyc')
+spec = importlib.util.spec_from_file_location("praatformant", cache_path+'praatformant.pyc')
+praatformant = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(praatformant)
+# from preprocess import phonemizer
+# from preprocess import praatformant
+from preprocess.bandwith_extractor import *
+
+
+
 
 
 def changecwd(path):
