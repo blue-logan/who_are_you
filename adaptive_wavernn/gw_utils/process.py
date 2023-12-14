@@ -12,7 +12,7 @@ from config import config
 # which includes the praat table (formants), acoustic table (phonemes), bandwidth extractor
 # Import any new functionality here
 import importlib.util
-cache_path = '/home/eric/GuessWho/adaptive_wavernn/gw_utils/preprocess/'
+cache_path = '/home/ubuntu/GuessWho/adaptive_wavernn/gw_utils/preprocess/'
 
 # phonemizer = imp.load_compiled("phomizer", cache_path+'phonemizer.pyc')
 spec = importlib.util.spec_from_file_location("phomizer", cache_path+'phonemizer.pyc')
